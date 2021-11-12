@@ -3,6 +3,17 @@ entries:
   secret-distributor:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2021-11-12T14:12:16.998407363Z"
+    description: A simple chart which only aims to distribute Secret resource, intended
+      to be used with helm-secrets
+    digest: f944d4a0ad827d2ba11f141d2207eab9ab074ef364848e32cb873dae9d8d5352
+    name: secret-distributor
+    type: application
+    urls:
+    - https://github.com/shusugmt/helm-charts/releases/download/secret-distributor-0.4.0/secret-distributor-0.4.0.tgz
+    version: 0.4.0
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2021-10-10T15:08:04.156504411Z"
     description: A Helm chart for Kubernetes
     digest: c9cafbafb5b6716f5bc7bed60746d2be18d7bcb4a4a314824fa8670c247ef6b2
@@ -31,4 +42,4 @@ entries:
     urls:
     - https://github.com/shusugmt/helm-charts/releases/download/secret-distributor-0.1.0/secret-distributor-0.1.0.tgz
     version: 0.1.0
-generated: "2021-10-10T15:08:04.156600713Z"
+generated: "2021-11-12T14:12:16.998433163Z"
