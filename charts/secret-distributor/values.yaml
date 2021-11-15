@@ -19,9 +19,20 @@ secret:
   # Optional annotations set to Secret resources
   annotations: {}
 
-  # Actual data
-  # Specify raw values (not base64 encoded)
-  data: {}
+  # Specify string key-values (not base64 encoded)
+  # It will be mapped to stringData field in resulting Secret
+  stringData: {}
+
+  # Specify base64 encoded key-values
+  # It will be mapped to data field in resulting Secret
+  # Note: This chart does not check any key duplication in stringData and base64Data, and those values are just copied to resulting Secret as-is.
+  # k8s apiserver will handle them; see https://kubernetes.io/docs/concepts/configuration/secret/#overview-of-secrets
+  # > If a key appears in both the `data` and the `stringData` field, the value specified in the `stringData` field takes precedence.
+  base64Data: {}
+
+  # DEPRECATED: Use stringData instead!!
+  # Specify string key-values (not base64 encoded)
+  #data: {}
 
 
 # Example
@@ -30,7 +41,7 @@ secret:
 #   namespaces:
 #   - httpbin
 #   type: kubernetes.io/tls
-#   data:
+#   stringData:
 #     tls.crt: |
 #       -----BEGIN CERTIFICATE-----
 #         :
@@ -44,4 +55,6 @@ secret:
 #       (snip)
 #         :
 #       -----END RSA PRIVATE KEY-----
-
+#
+#   base64Data:
+#     license.key: bGljZW5zZS5rZXkK...(snip)
